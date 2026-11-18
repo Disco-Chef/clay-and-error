@@ -48,13 +48,15 @@ Each ticket keeps the history of the steps the piece went through. When a piece
 breaks, its last step is `"Loss"`. So the step where it broke is the one just before.
 
 **Before writing any code**, explain your approach: out loud, in a comment or in
-pseudo-code. Only then, implement `lossesByStep` (`npm run test:2`).
+pseudo-code. Only then, implement `lossesByStep` (`npm run test:2`). The exact
+rules are at the top of `losses.js`.
 
 ## Exercise 3: bug hunt
 
 📁 `exercises/3-bug-hunt/`
 
-`validateOrder` checks an order before it's saved. The business rules:
+`validateOrder` checks an order before it's saved. It returns a list of error
+messages; an empty list means the order is valid. The business rules:
 
 | Field | Rule |
 |---|---|
@@ -64,9 +66,11 @@ pseudo-code. Only then, implement `lossesByStep` (`npm run test:2`).
 
 All the tests pass… and yet the code has several bugs.
 
-1. First list your test cases (a table, or Gherkin scenarios) **without reading the code**.
-2. Write them in `validate-order.test.js`: they should expose the bugs.
-3. Fix the code until every test passes.
+1. **Without reading `validate-order.js`**, list the test cases you would run: a table
+   or Gherkin scenarios, on paper or in a comment at the top of the test file.
+2. Add them to `validate-order.test.js`, below the existing tests. A new test that
+   fails has found a bug. (The existing tests show the exact error messages.)
+3. Fix `validate-order.js` until every test passes.
 
 ## Exercise 4: tidy-up
 
@@ -74,7 +78,10 @@ All the tests pass… and yet the code has several bugs.
 
 `order-status.js` works (the tests pass), but nobody dares touch it.
 Make it readable for the next person **without changing its behaviour**:
-the tests must stay green from start to finish (`npm run test:4`).
+
+- don't change what the tests expect;
+- run `npm run test:4` after each small change: the tests must stay green throughout;
+- you can rename the function, as long as you update the import in the test file.
 
 Bonus question: reading the tests, is there a business rule that looks odd to you?
-What would you do about it?
+Don't change it in the code: tell us what you would do about it.
