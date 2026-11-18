@@ -1,0 +1,17 @@
+{
+  "name": "clay-and-error",
+  "version": "1.0.0",
+  "description": "A technical interview kata set in a pottery workshop",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:1": "node --test exercises/1-next-step/next-step.test.js",
+    "test:2": "node --test exercises/2-losses/losses.test.js",
+    "test:3": "node --test exercises/3-bug-hunt/validate-order.test.js",
+    "test:4": "node --test exercises/4-tidy-up/order-status.test.js"
+  }
+}
